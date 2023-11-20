@@ -1,0 +1,51 @@
+<div class="wrapper">
+    <nav id="sidebar" class="sidebar js-sidebar">
+        <div class="sidebar-content js-simplebar">
+            <a class="sidebar-brand" href="index.html">
+                <span class="align-middle"> Course Management</span>
+            </a>
+    
+            <ul class="sidebar-nav">
+                <li class="sidebar-header">
+                    Instructor
+                </li>
+    
+                <li class="sidebar-item active">
+                    <a class="sidebar-link" routerLink="/instructor-dashboard/courses">
+                        <i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Dashboard</span>
+                    </a>
+                </li>
+    
+                <li class="sidebar-item">
+                    <a class="sidebar-link" routerLink="/instructor-dashboard/students">
+                        <i class="align-middle" data-feather="user"></i> <span class="align-middle">Students</span>
+                    </a>
+                </li>
+    
+                <li class="sidebar-item">
+                    <a class="sidebar-link" routerLink="/instructor-dashboard/quiz">
+                        <i class="align-middle" data-feather="book"></i> <span class="align-middle">Assignments</span>
+                    </a>
+                </li>
+    
+                <li class="sidebar-item">
+                    <a class="sidebar-link" routerLink="/instructor-dashboard/reports">
+                        <i class="align-middle" data-feather="log in"></i> <span class="align-middle">Reports</span>
+                    </a>
+                </li>
+      
+                <li class="sidebar-item">
+                    <a class="sidebar-link" routerLink="/instructor-dashboard/chat">
+                        <i class="align-middle" data-feather="user-plus"></i> <span class="align-middle">Chat</span>
+                    </a>
+                </li>  
+            </ul>    
+        </div>
+    </nav>
+    <div class="main">
+      <app-topbar></app-topbar>
+      <div class="main">
+        <router-outlet></router-outlet>  
+      </div>
+    </div>
+</div>

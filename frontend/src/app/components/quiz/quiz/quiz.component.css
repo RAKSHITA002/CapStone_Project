@@ -1,0 +1,43 @@
+.btn {
+    background-color: purple;
+    border-color: purple;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    border-radius: 0.5vw;
+}
+
+.card {
+    text-align: center;
+    padding: 1rem;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    transition: all 0.8s ease;
+
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+.card h1 {
+    margin-bottom: 4vw;
+    margin-top: 4vw;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.card button {
+    margin-top: 1rem;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4vw;
+    margin-top: 10vw;
+}

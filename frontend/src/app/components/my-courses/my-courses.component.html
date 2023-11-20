@@ -1,0 +1,15 @@
+<h1>My Courses</h1>
+<div class="card-demo">
+  <div class="card" style="width: 15rem; border : 0.1px solid rgb(215, 213, 213)" *ngFor="let course of myCourse">
+    <img src="{{course.image}}" class="card-img-top" alt="..." >
+    <div class="card-body">
+      <h3>{{course.title}}</h3>
+      <h6 class="card-title">{{course.instructorName}}</h6>
+      <p class="card-text" style="margin-top: 3vw;">{{course.heading}}</p>
+    </div>
+    <div class="btn-group" role="group" style = "gap : 2vw; margin : 1vw;">
+    <button type="button" class="btn btn-secondary btn-sm" (click)="edit(course.id)">Edit Content</button>
+    <button type="button" class="btn btn-secondary btn-sm" (click)="deleteCourse(course.id)">Delete Course</button>
+</div>
+  </div>
+</div>

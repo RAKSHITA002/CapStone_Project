@@ -1,0 +1,22 @@
+<div class="search-container">
+    <label>Search Course:</label>
+    <input type="text" [(ngModel)]="searchText" (input)="search($event)" placeholder="Enter course name or instructor name">
+  </div>
+  <div class="container">
+    <button *ngIf = "userRole==='instructor'"><a routerLink="/instructor-dashboard/add-course">Add Course</a></button>
+    <button *ngIf = "userRole === 'instructor'" (click)=" myCourse(this.instructorName)">My Courses</button>
+  </div>
+   <h1 *ngIf = "userRole === 'student'">Explore Courses</h1>
+    <h1 *ngIf = "userRole === 'instructor'">All Courses</h1>
+    
+<div class="card-demo">
+  <div class="card" style="width: 15rem; border : 0.1px solid rgb(215, 213, 213)" *ngFor="let course of filteredCourses">
+    <img src="{{course.image}}" class="card-img-top" alt="..." (click)="content(course.id)">
+    <div class="card-body">
+      <h3>{{course.title}}</h3>
+      <h6 class="card-title">{{course.instructorName}}</h6>
+      <p class="card-text" style="margin-top: 3vw;">{{course.heading}}</p>
+      <button *ngIf = "userRole === 'admin'">Delete</button>
+    </div>
+  </div>
+</div>

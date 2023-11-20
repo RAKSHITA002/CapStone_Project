@@ -1,0 +1,37 @@
+<div class="wrapper">
+    <nav id="sidebar" class="sidebar js-sidebar">
+        <div class="sidebar-content js-simplebar">
+            <a class="sidebar-brand" href="index.html">
+                <span class="align-middle"> Course Management</span>
+            </a>
+    
+            <ul class="sidebar-nav">
+                <li class="sidebar-header">
+                    Admin
+                </li>
+    
+                <li class="sidebar-item active">
+                    <a class="sidebar-link" routerLink="/admin-dashboard/courses">
+                        <i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Dashboard</span>
+                    </a>
+                </li>
+    
+                <li class="sidebar-item">
+                    <a class="sidebar-link" routerLink="/admin-dashboard/feedback">
+                        <i class="align-middle" data-feather="user"></i> <span class="align-middle">Feedback</span>
+                    </a>
+                </li>
+    
+                <li class="sidebar-item">
+                    <a class="sidebar-link" routerLink="/admin-dashboard/support-staff">
+                        <i class="align-middle" data-feather="book"></i> <span class="align-middle">Support Staff</span>
+                    </a>
+                </li>
+    
+            </ul>    
+        </div>
+    </nav>
+      <div class="main">
+        <router-outlet></router-outlet>  
+    </div>
+</div>

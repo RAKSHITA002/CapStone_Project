@@ -1,0 +1,31 @@
+<div class="container">
+    <h2>Login</h2>
+    <form [formGroup]="userData" (submit)="LogIn()">
+        <div class="row">
+            <div class="col-lg-12">
+                <label>Email</label>
+                <input type="text" class="form-control" formControlName="email"
+                    [ngStyle]="{border : userData.get('email')?.dirty && !userData.get('email')?.valid? '1px solid red' : ''}" />
+                <span style="color : red;"
+                    *ngIf="userData.get('email')?.dirty && !userData.get('email')?.valid">Please enter valid
+                    Email</span>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <label>Password</label>
+                    <input type="password" class="form-control" formControlName="password"
+                        [ngStyle]="{border : userData.get('password')?.dirty && !userData.get('password')?.valid? '1px solid red' : ''}" />
+                    <span style="color : red;"
+                        *ngIf="userData.get('password')?.dirty && !userData.get('password')?.valid">Please enter valid
+                        Password
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-12">
+            <input type="submit" [disabled]="!userData.valid" class="btn btn-primary mt-2">
+        </div>
+
+        <p>Not Registered? <a routerLink=""> Regsiter </a></p>
+    </form>
+</div>

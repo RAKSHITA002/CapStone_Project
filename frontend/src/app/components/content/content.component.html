@@ -1,0 +1,7 @@
+<div *ngIf="course">
+    <h2>{{ course.title }}</h2>
+    <p>Instructor: {{ course.instructorName }}</p>
+    <img src="{{course.image}}" alt="">
+    <p>{{course.video1}}</p>
+    <button (click)="enroll()">Enroll Now</button>
+</div>

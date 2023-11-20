@@ -1,0 +1,7 @@
+<button *ngIf = "userRole === 'instructor'" class="btn">Create Assignments</button>
+
+<div class="box">
+    <div class="quiz-name">Angular + C#</div>
+    <div class="marks">Make a Course Management App using Angular and C#</div>
+    <button *ngIf = "userRole === 'student'"><a routerLink="/dashboard/welcome">Start</a></button>
+</div>

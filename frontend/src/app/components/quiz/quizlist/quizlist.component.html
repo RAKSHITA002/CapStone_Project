@@ -1,0 +1,13 @@
+<div class="container">
+    <button *ngIf = "userRole === 'instructor'" class="btn">Create Quiz</button>
+<div class="box">
+    <div class="quiz-name">Angular</div>
+    <div class="marks">Total marks : 50</div>
+    <button *ngIf = "userRole === 'student'"><a routerLink="/dashboard/welcome">Start</a></button>
+</div>
+<div class="box">
+    <div class="quiz-name">HTML</div>
+    <div class="marks">Total marks : 50</div>
+    <button *ngIf = "userRole === 'student'"><a routerLink="/dashboard/html-welcome">Start</a></button>
+</div>
+</div>

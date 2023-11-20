@@ -1,0 +1,43 @@
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2vw auto;
+    background-color: #f9f5ff;
+}
+
+thead {
+    color: #fff;
+}
+
+th,
+td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th:first-child,
+td:first-child {
+    width: 40%;
+}
+
+th:last-child,
+td:last-child {
+    width: 20%;
+}
+
+button{
+    margin : 1vw;
+    padding : 0.5vw;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    border-radius: 0.2vw;
+    border : none;
+    color : white;
+    background-color: #a735f0; 
+    
+}
+
+.container{
+    padding : 3vw;
+}

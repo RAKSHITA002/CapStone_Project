@@ -1,0 +1,31 @@
+  <form *ngIf = "userRole==='student'"[formGroup]="feedbackData" (ngSubmit)="giveFeedback()">
+    <div>
+      <h4>Rate the courses as good,bad,average</h4>
+        <input formControlName="review"/>
+    </div>
+    <div>
+      <label>Feedback:</label>
+      <textarea formControlName="content"></textarea>
+      <div *ngIf="feedbackData.controls['content'].invalid && (feedbackData.controls['content'].dirty || feedbackData.controls['content'].touched)">
+      </div>
+    </div>
+  
+    <button type="submit">Submit</button>
+  </form>
+
+  <form *ngIf = "userRole==='admin'">
+    <div>
+      <h4>Give Feedback to user</h4>
+        <input formControlName="user"/>
+        <label>UserId</label>
+        <input formControlName="id"/>
+    </div>
+    <div>
+      <label>Feedback:</label>
+      <textarea formControlName="content"></textarea>
+      <div *ngIf="feedbackData.controls['content'].invalid && (feedbackData.controls['content'].dirty || feedbackData.controls['content'].touched)">
+      </div>
+    </div>
+  
+    <button type="submit">Submit</button>
+  </form>

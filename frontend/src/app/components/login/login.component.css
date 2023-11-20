@@ -1,0 +1,55 @@
+.container { max-width: 600px; margin: 2vw auto; padding: 40px; border-radius: 10px; box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1); }
+
+h2 { font-size: 24px; margin-bottom: 30px; text-align: center; }
+
+form label { font-size: 16px; font-weight: bold; display: block; margin-bottom: 8px; }
+
+.form-control { width: 100%; height: 40px; padding: 8px; border: 1px solid #ddd; border-radius: 5px; font-size: 16px; margin-bottom: 20px; }
+
+.form-control:focus { outline: none; border-color: rgb(164, 53, 240); box-shadow: 0px 0px 5px rgba(164, 53, 240, 0.5); }
+
+form input[type="submit"] { width: 100%; height: 48px; background-color: rgb(164, 53, 240); border: none; border-radius: 5px; font-size: 18px; font-weight: bold; color: #fff; cursor: pointer; transition: background-color 0.3s ease-in-out; }
+
+form input[type="submit"]:disabled { opacity: 0.5; cursor: not-allowed; }
+
+form input[type="submit"]:hover { background-color: #a735f0; }
+
+form span { color: #f00; font-size: 14px; margin-top: -10px; margin-bottom: 20px; }
+
+form p { font-size: 16px; margin-top: 20px; text-align: center; }
+
+form p a { color: rgb(164, 53, 240); }
+
+@media (max-width: 768px) { .container { max-width: 100%; padding: 20px; }
+
+.form-control {
+    height: 30px;
+    font-size: 14px;
+}
+
+form input[type="submit"] {
+    height: 36px;
+    font-size: 16px;
+}
+
+h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+form label {
+    font-size: 14px;
+    margin-bottom: 6px;
+}
+
+form span {
+    font-size: 12px;
+    margin-top: -8px;
+    margin-bottom: 12px;
+}
+
+form p {
+    font-size: 14px;
+    margin-top: 16px;
+}
+}
