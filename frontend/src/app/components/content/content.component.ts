@@ -4,6 +4,7 @@ import { Courses } from 'src/app/models/courses';
 import { ActivatedRoute } from '@angular/router';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { Enrolled } from 'src/app/models/enrolled';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -19,14 +20,23 @@ export class ContentComponent {
   course : Courses |  undefined;
   video2 : string = "";
   videoUrl : SafeResourceUrl | undefined;
+  name : string = "";
 
-  constructor(private service : ApiService, private route : ActivatedRoute,  private sanitizer: DomSanitizer){
+  constructor(private service : ApiService, private route : ActivatedRoute,  private sanitizer: DomSanitizer, private router : Router){
     
   }
 
   ngOnInit() {
     this.courseId = this.route.snapshot.paramMap.get('id')?.toString() || '';
   
+    const userJson = localStorage.getItem('user');
+    if (userJson !== null) {
+      const userObject = JSON.parse(userJson);
+      this.userId = userObject.id;
+     
+      this.name = userObject.name;
+      console.log(this.name);
+    } 
     this.service.getCourseById(this.courseId).subscribe(data => {
       this.course = data;
       this.video2 = this.course.video2;
@@ -40,7 +50,8 @@ export class ContentComponent {
         image: this.course?.image,
         title: this.course?.title,
         instructorName : this.course.instructorName,
-        status : "Yet to Approve"
+        status : "Yet to Approve",
+        studentName : this.name
       };
 
       console.log(this.enrollData);
@@ -49,22 +60,17 @@ export class ContentComponent {
 
     this.videoUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.video2);
 
-    const userJson = localStorage.getItem('user');
-    if (userJson !== null) {
-      const userObject = JSON.parse(userJson);
-      this.userId = userObject.id;
-      console.log(this.userId);
-    } else {
-      console.log('User not found in localStorage');
-    }
+   
   }
 
   
   enroll(){
-    alert("Added to My Learning");
     this.service.enrollUser(this.enrollData).subscribe((res)=>{
       console.log(res);
     });
+    this.router.navigate(["dashboard/enrolled"]);
   }
+
+  
 
 }

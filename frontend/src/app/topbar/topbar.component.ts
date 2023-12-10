@@ -7,6 +7,18 @@ import { Router } from '@angular/router';
 })
 export class TopbarComponent {
 
+
+  name : string = "";
+  role : string = "";
+
+  ngOnInit(){
+    const userJson = localStorage.getItem('user');
+    if (userJson !== null) {
+      const userObject = JSON.parse(userJson);
+      this.role = userObject.role;
+     this.name = userObject.name;
+    } 
+  }
   constructor(private route : Router){
 
   }

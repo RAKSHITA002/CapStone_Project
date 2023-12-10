@@ -25,9 +25,7 @@ export class StudentsComponent {
       this.instructorName = name.charAt(0).toUpperCase() + name.substring(1);
     } 
 
-    this.getCourse();
-
-     
+    this.getCourse();  
   }
 
   getCourse(){
@@ -42,7 +40,8 @@ export class StudentsComponent {
           image : item.image,
           title : item.title,
           status : "Enrolled",
-          instructorName : item.instructorName
+          instructorName : item.instructorName,
+          studentName : item.studentName
         }
 
         console.log(this.enrolled);
@@ -55,6 +54,28 @@ export class StudentsComponent {
       this.service.updateEnrolled(this.enrolled.id, this.enrolled).subscribe((res)=>{
       console.log(res);
     })
+  }
+
+  reject(){
+
+    
+    for(let item of this.course){
+      this.enrolled = {
+        id : item.id,
+        userId : item.userId,
+        image : item.image,
+        title : item.title,
+        status : "Rejected",
+        instructorName : item.instructorName,
+        studentName : item.studentName
+      }
+    }
+
+    this.service.updateEnrolled(this.enrolled.id, this.enrolled).subscribe((res)=>{
+      console.log(res);
+    })
+
+    
   }
 
 }

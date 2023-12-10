@@ -5,4 +5,5 @@ export interface Enrolled {
     title : string;
     status : string;
     instructorName : string;
-}
+    studentName : string;
+ }

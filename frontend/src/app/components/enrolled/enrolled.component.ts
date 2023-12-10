@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Enrolled } from 'src/app/models/enrolled';
 import { ApiService } from 'src/app/services/api.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-enrolled',
@@ -11,7 +12,7 @@ export class EnrolledComponent {
 userId : string = "";
 enrollData : Array<Enrolled> = [];
 
-  constructor(private service : ApiService){
+  constructor(private service : ApiService, private toastr : ToastrService){
     
     const userJson = localStorage.getItem('user');
     if (userJson !== null) {
@@ -32,7 +33,7 @@ ngOnInit(){
 }
 
 remove(id : string){
-  alert("Removed");
+  this.toastr.success('Leaved', 'Success');
  this.service.deleteEnrolled(id).subscribe((data)=>{
   console.log(data);
 

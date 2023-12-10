@@ -39,7 +39,7 @@ export class MyCoursesComponent {
 
   deleteCourse(id : string){
     this.courseId = id;
-    this.service.deleteCourse(this.courseId);
+    this.service.deleteCourse(this.courseId).subscribe((res)=>{});
   }
   
 }

@@ -7,20 +7,15 @@
             <input type="text" class="form-control" formControlName ="title" [ngStyle] = "{border : newCourse.get('title')?.dirty && !newCourse.get('title')?.valid? '1px solid red' : ''}"/>
             <span style="color : red;" *ngIf = "newCourse.get('title')?.dirty && !newCourse.get('title')?.valid">Please enter valid title</span>
         </div>
-       <!--  <div class="col-lg-6">
-            <label>Category</label>
-            <select class="form-control" formControlName="category">
-               <option value="">---Select---</option>
-               <option value="sports">Sports</option>
-               <option value="film">Flim</option>
-               <option value="foreign">Foreign</option>
-               <option value="weather">Weather</option>
-            </select>
-        </div> -->
-        <div class="col-lg-12">
+        <div class="col-lg-6">
             <label>Image</label>
             <input class="form-control" formControlName="image"/>
         </div>
+       <!--  <div class="col-lg-6">
+            <label>Image</label>
+            <input type="file" class="form-control" formControlName="image" (change)="onFileChange($event)">
+            <span style="color : red;" *ngIf="newCourse.get('image')?.dirty && newCourse.get('image')?.errors?.['required']">Please upload an image</span>
+            </div> -->
         <div class="col-lg-6">
             <label>InstructorName</label>
             <input class="form-control" formControlName="instructorName"/>
@@ -30,6 +25,10 @@
             <input class="form-control" formControlName="heading"/>
         </div>
         <div class="col-lg-6">
+            <label>Description</label>
+            <input class="form-control" formControlName="description"/>
+        </div>
+        <div class="col-lg-6">
             <label>Video</label>
             <input class="form-control" formControlName="video"/>
         </div>
@@ -37,5 +36,4 @@
     <div class="col-lg-12">
         <input type="submit" [disabled]="!newCourse.valid" class="btn btn-primary mt-2">
     </div>
-   </form>
-</div>
+   <form>

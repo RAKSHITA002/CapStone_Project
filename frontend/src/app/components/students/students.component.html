@@ -1,19 +1,37 @@
 <div class="container">
-    <table class="table">
-        <thead>
-          <tr>
-            <th scope="col">Course Name</th>
-            <th scope="col">Student Id.</th>
-            <th scope="col">Status</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor = "let item of course">
-            <td>{{item.title}}</td>
-            <td>{{item.userId}}</td>
-            <td>{{item.status}}</td>
-            <button (click)="status()">Approve/Reject</button>
-          </tr>
-        </tbody>
-      </table>
-      </div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Course Name</th>
+        <th scope="col">Std Name.</th>
+        <th scope="col">Status</th>
+        <th colspan="2">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of course">
+        <td>{{ item.title }}</td>
+        <td>{{ item.studentName }}</td>
+        <td>{{ item.status }}</td>
+        <td>
+          <button
+            class="approval-btn"
+            [disabled]="item.status === 'Enrolled'"
+            (click)="status()"
+          >
+            Approve
+          </button>
+        </td>
+        <td>
+          <button
+            class="reject-btn"
+           
+            (click)="reject()"
+          >
+            Reject
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

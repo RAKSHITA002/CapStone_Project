@@ -1,8 +1,15 @@
+  <div class="form-container">
   <form *ngIf = "userRole==='student'"[formGroup]="feedbackData" (ngSubmit)="giveFeedback()">
-    <div>
-      <h4>Rate the courses as good,bad,average</h4>
-        <input formControlName="review"/>
-    </div>
+       <div class="col-lg-6">
+            <label>Review</label>
+            <select class="form-control" formControlName="review">
+               <option value="">---Select---</option>
+               <option value="good">Good</option>
+               <option value="bad">Bad</option>
+               <option value="average">Average</option>
+             
+            </select>
+        </div>
     <div>
       <label>Feedback:</label>
       <textarea formControlName="content"></textarea>
@@ -10,9 +17,30 @@
       </div>
     </div>
   
-    <button type="submit">Submit</button>
+    <button type="submit" (click)=" submit()">Submit</button>
   </form>
+  </div>
 
+
+  <div class="container2" *ngIf = "userRole==='admin'">
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Student Id</th>
+            <th scope="col">Review</th>
+            <th scope="col">Feedback Given</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor = "let item of myData">
+            <td>{{item.userId}}</td>
+            <td>{{item.review}}</td>
+            <td>{{item.content}}</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+<!-- 
   <form *ngIf = "userRole==='admin'">
     <div>
       <h4>Give Feedback to user</h4>
@@ -28,4 +56,5 @@
     </div>
   
     <button type="submit">Submit</button>
-  </form>
+  </form> -->
+

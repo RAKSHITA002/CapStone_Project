@@ -10,28 +10,38 @@
                     Admin
                 </li>
     
-                <li class="sidebar-item active">
+                <li class="sidebar-item" routerLinkActive="active">
                     <a class="sidebar-link" routerLink="/admin-dashboard/courses">
                         <i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Dashboard</span>
                     </a>
                 </li>
     
-                <li class="sidebar-item">
+                <li class="sidebar-item" routerLinkActive="active">
                     <a class="sidebar-link" routerLink="/admin-dashboard/feedback">
                         <i class="align-middle" data-feather="user"></i> <span class="align-middle">Feedback</span>
                     </a>
                 </li>
     
-                <li class="sidebar-item">
-                    <a class="sidebar-link" routerLink="/admin-dashboard/support-staff">
-                        <i class="align-middle" data-feather="book"></i> <span class="align-middle">Support Staff</span>
+                <!-- <li class="sidebar-item">
+                    <a class="sidebar-link" routerLink="/admin-dashboard/studentlist">
+                        <i class="align-middle" data-feather="book"></i> <span class="align-middle">Student list</span>
                     </a>
                 </li>
+    
+    
+                <li class="sidebar-item">
+                    <a class="sidebar-link" routerLink="/admin-dashboard/instructorlist">
+                        <i class="align-middle" data-feather="book"></i> <span class="align-middle">Instructor list</span>
+                    </a>
+                </li> -->
     
             </ul>    
         </div>
     </nav>
-      <div class="main">
-        <router-outlet></router-outlet>  
-    </div>
+    <div class="main">
+        <app-topbar></app-topbar>
+        <div class="main">
+          <router-outlet></router-outlet>  
+        </div>
+      </div>
 </div>

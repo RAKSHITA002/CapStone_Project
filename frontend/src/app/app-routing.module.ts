@@ -9,7 +9,6 @@ import { CouresaddComponent } from './components/couresadd/couresadd.component';
 import { ContentComponent } from './components/content/content.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
-import { AuthGuard } from './Guard/auth.guard';
 import { EnrolledComponent } from './components/enrolled/enrolled.component';
 import { FeedbackComponent } from './components/feedback/feedback.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
@@ -26,6 +25,11 @@ import { QuizlistComponent } from './components/quiz/quizlist/quizlist.component
 import { ChatComponent } from './components/chat/chat.component';
 import { ReportsComponent } from './components/reports/reports.component';
 import { SupportStaffComponent } from './components/support-staff/support-staff.component';
+import { AdminGuard } from './admin-dashboard/admin.guard';
+import { StudentGuard } from './dashboard/student.guard';
+import { InstructorGuard } from './instructor-dashboard/instructor.guard';
+import { CreateassignemntComponent } from './components/quiz/createassignemnt/createassignemnt.component';
+import { InstructorChatComponent } from './components/instructor-chat/instructor-chat.component';
 const routes: Routes = [
 
 
@@ -47,7 +51,7 @@ const routes: Routes = [
   {
     path : "admin-dashboard",
     component : AdminDashboardComponent,
-    canActivate:[AuthGuard],
+    canActivate:[AdminGuard],
 
     children : [
       {
@@ -68,7 +72,7 @@ const routes: Routes = [
   {
     path : "instructor-dashboard",
     component : InstructorDashboardComponent,
-    canActivate:[AuthGuard],
+    canActivate : [InstructorGuard],
 
     children : [
       {
@@ -77,8 +81,7 @@ const routes: Routes = [
       },
       {
         path : "courses",
-        component :CoursesComponent,
-        canActivate:[AuthGuard]
+        component :CoursesComponent
       },
       {
         path : "my-course/:id",
@@ -98,7 +101,7 @@ const routes: Routes = [
       },
       {
         path : "chat",
-        component : ChatComponent
+        component : InstructorChatComponent
       },
       {
            path : "reports",
@@ -111,6 +114,9 @@ const routes: Routes = [
       {
         path : "assignments",
         component : AssignmentsComponent
+      },{
+        path :"createassignment",
+        component : CreateassignemntComponent
       }
     ]
   },
@@ -118,7 +124,7 @@ const routes: Routes = [
   {
     path:"dashboard",
     component:DashboardComponent,
-    canActivate:[AuthGuard],
+    canActivate:[StudentGuard],
 
     children : [
       {
@@ -133,8 +139,7 @@ const routes: Routes = [
 
       {
         path : "content/:id",
-        component : ContentComponent,
-        canActivate:[AuthGuard],
+        component : ContentComponent
         },
         {
           path : "feedback",

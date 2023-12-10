@@ -5,6 +5,8 @@ import { Courses } from '../models/courses';
 import { Users } from '../models/users';
 import { Enrolled } from '../models/enrolled';
 import { Feedback } from '../models/feedback';
+import { Assignment } from '../models/assignment';
+import { Chat } from '../models/chat';
 @Injectable({
   providedIn: 'root'
 })
@@ -31,9 +33,10 @@ export class ApiService {
     return this.http.put<Courses>(`https://localhost:7291/api/Courses/${id}`,course);
   }
 
-  deleteCourse(id : string){
-    this.http.delete(`https://localhost:7291/api/Courses/${id}`);
-    console.log(`https://localhost:7291/api/Courses/${id}`);
+  deleteCourse(id : string) : Observable<Courses>{
+    
+    return this.http.delete<Courses>(`https://localhost:7291/api/Courses/${id}`);
+    /* console.log(`https://localhost:7291/api/Courses/${id}`); */
     
   }
 
@@ -41,6 +44,10 @@ export class ApiService {
   addCourse(course : Courses) : Observable<Courses>{
     return this.http.post<Courses>(`https://localhost:7291/api/Courses`, course);
   }
+
+  /* addCourse(newCourse: FormData) {
+    return this.http.post(`https://localhost:7291/api/Courses`, newCourse);
+  } */
 
 
 
@@ -83,5 +90,25 @@ export class ApiService {
   //not used yet for admin
   getFeedback() : Observable<Array<Feedback>>{
     return this.http.get<Array<Feedback>>(`https://localhost:7291/api/Feedback`)
+  }
+
+  //assignemnt
+
+  getAssignment(): Observable<Array<Assignment>>{
+    return this.http.get<Array<Assignment>>(`https://localhost:7291/api/Assignment`)
+  }
+
+  createAssignment(assignment : Assignment) : Observable<Assignment>{
+    return this.http.post<Assignment>(`https://localhost:7291/api/Assignment`, assignment)
+  }
+
+  //chat
+
+  createchat(chat : Chat) : Observable<Chat>{
+    return this.http.post<Chat>(`https://localhost:7291/api/Chat`,chat);
+  }
+
+  getChatsById(senderId: string, receiverId: string): Observable<Chat[]>{
+    return this.http.get<Chat[]>(`https://localhost:7291/api/Chat/${senderId}/${receiverId}`)
   }
 }

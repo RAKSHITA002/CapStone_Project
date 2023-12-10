@@ -1,10 +1,10 @@
 <div class="container">
-<div class="card-demo">
+<div class="card-demo"  *ngIf = "userRole === 'student'">
   <div class="card" style="width: 15rem; border : 0.1px solid rgb(215, 213, 213)">
     <img src="https://ggsc.s3.amazonaws.com/images/made/images/uploads/Question_mark_1_370_260_s_c1.jpg" alt="">
     <h1>Quizes</h1>
-    <a routerLink="/instructor-dashboard/quizlist"><button type="button" class="btn btn-secondary btn-sm" *ngIf = "userRole === 'student'">Start</button></a>
-    <a routerLink="/instructor-dashboard/quizlist"><button type="button" class="btn btn-secondary btn-sm" *ngIf = "userRole === 'instructor'">Edit</button></a>
+    <a routerLink="/dashboard/quizlist"><button type="button" class="btn btn-secondary btn-sm" *ngIf = "userRole === 'student'">Start</button></a>
+   <!--  <a routerLink="/instructor-dashboard/quizlist"><button type="button" class="btn btn-secondary btn-sm" *ngIf = "userRole === 'instructor'">Edit</button></a> -->
   </div>
 </div>
 
@@ -12,7 +12,7 @@
   <div class="card" style="width: 15rem; border : 0.1px solid rgb(215, 213, 213)">
     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5hLpJD_o5s0Xpb1-SI2X-3UeG0Elj5aPoht4rUscsaZaxZ3dgc7g9pkSQaMEA71DprgA&usqp=CAU" alt="">
     <h1>Assignments</h1>
-    <a routerLink="/instructor-dashboard/assignments"><button type="button" class="btn btn-secondary btn-sm" *ngIf = "userRole === 'student'">Start</button></a>
+    <a routerLink="/dashboard/assignments"><button type="button" class="btn btn-secondary btn-sm" *ngIf = "userRole === 'student'">Start</button></a>
     <a routerLink="/instructor-dashboard/assignments"><button type="button" class="btn btn-secondary btn-sm" *ngIf = "userRole === 'instructor'">Edit</button></a>
   </div>
 </div>

@@ -3,6 +3,7 @@ import { ApiService } from 'src/app/services/api.service';
 import { Courses } from 'src/app/models/courses';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-edit-course',
@@ -15,7 +16,7 @@ newCourse : FormGroup;
 courseId : string = "";
 course !: Courses;
 
-constructor(private service : ApiService, private route : ActivatedRoute){
+constructor(private service : ApiService, private route : ActivatedRoute, private router : Router){
   this.newCourse = new FormGroup({
     'title' : new FormControl('',[Validators.required]),
     'image' : new FormControl('', [Validators.required]),
@@ -56,6 +57,7 @@ editCourse(){
 
   this.service.editCourse(this.courseId, courseData).subscribe((res)=>{
     console.log(res);
+ this.router.navigate(["instructor-dashboard/courses"]);
   })
 }
 

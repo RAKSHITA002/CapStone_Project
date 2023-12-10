@@ -38,19 +38,17 @@ export class LoginComponent {
       const userObject = JSON.parse(userJson);
       this.userRole = userObject.role;
       console.log(this.userRole);
-      } else {
-      console.log('User not found in localStorage');
-      }
+      } 
 
 
       if(this.userRole === "student")
-      this.router.navigate(["/dashboard"]);
+      this.router.navigate(["/dashboard/courses"]);
 
       else if(this.userRole === "instructor")
-      this.router.navigate(["/instructor-dashboard"]);
+      this.router.navigate(["/instructor-dashboard/courses"]);
 
       else if(this.userRole === "admin")
-      this.router.navigate(["/admin-dashboard"]);
+      this.router.navigate(["/admin-dashboard/courses"]);
      })
   }
   

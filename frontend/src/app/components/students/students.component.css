@@ -35,7 +35,19 @@ button{
     border : none;
     color : white;
     background-color: #a735f0; 
-    
+}
+
+
+.approval-btn[disabled],
+.reject-btn[disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.approval-btn[disabled]:hover,
+.reject-btn[disabled]:hover {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
 .container{

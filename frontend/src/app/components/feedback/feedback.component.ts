@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ApiService } from 'src/app/services/api.service';
 import { Feedback } from 'src/app/models/feedback';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-feedback',
@@ -13,9 +14,10 @@ export class FeedbackComponent {
   userId : string = "";
   feedback !: Feedback 
   feedbackData : FormGroup;
- userRole : string = "";
+   userRole : string = "";
+   myData: Array<Feedback>= [];
 
-  constructor(private service : ApiService){
+  constructor(private service : ApiService, private toastr: ToastrService){
 
    const userJson = localStorage.getItem('user');
     if (userJson !== null) {
@@ -47,6 +49,10 @@ export class FeedbackComponent {
       review : "",
       content : ""
     }
+
+  this.service.getFeedback().subscribe((res)=>{
+    this.myData = res;
+  })
   }
 
   
@@ -60,5 +66,9 @@ export class FeedbackComponent {
     });
   }
 
+  submit(){
+    this.toastr.success('You have successfully submited the feedback', 'Success')
+    // alert("Success");
+  }
 
 }

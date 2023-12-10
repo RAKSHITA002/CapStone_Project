@@ -1,39 +1,76 @@
-form {
+.form-container {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  padding: 20px;
+  margin-top : 2vw;
 }
 
-h4 {
-  text-align: center;
-}
-
-input {
-  margin: 10px;
-  padding: 10px;
-  width: 200px;
+/* Center the form inputs and labels */
+.form-control {
+  margin-bottom: 20px;
+  width: 100%;
   text-align: center;
 }
 
 label {
-  display: block;
-  margin: 10px;
+  font-weight: bold;
   text-align: center;
+  margin-bottom: 10px;
 }
 
 textarea {
-  margin: 10px;
-  padding: 10px;
-  width: 300px;
+  width: 100%;
   height: 100px;
+  margin-bottom: 20px;
+  text-align: center;
 }
 
+/* Style the error message for the textarea */
+.invalid-feedback {
+  color: red;
+}
+
+/* Style the submit button */
 button {
-  margin: 20px;
-  padding: 10px;
-  background-color: #4CAF50;
+  background-color: purple;
   color: white;
-  border: none;
-  border-radius: 5px;
+ border : none;
+  padding: 10px 18px;
+  font-size: 16px;
+  border-radius: 4px;
   cursor: pointer;
+  margin-top: 20px;
+}
+
+/* Change the button color on hover */
+button:hover {
+  background-color: #0064c4;
+  border-color: #0064c4;
+}
+
+/* Make the button disabled when feedback is not selected */
+button:disabled {
+  background-color: #a1a1a1;
+  border-color: #a1a1a1;
+  cursor: not-allowed;
+}
+
+/* Style the notifications for success and error message */
+.success {
+  color: green;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.error {
+  color: red;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.container2{
+  padding-left : 2vw;
+  padding-right : 2vw;
 }

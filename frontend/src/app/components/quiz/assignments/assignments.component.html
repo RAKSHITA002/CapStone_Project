@@ -1,7 +1,8 @@
-<button *ngIf = "userRole === 'instructor'" class="btn">Create Assignments</button>
+<button *ngIf = "userRole === 'instructor'" class="btn"><a routerLink="/instructor-dashboard/createassignment">Create Assignments</a></button>
 
-<div class="box">
-    <div class="quiz-name">Angular + C#</div>
-    <div class="marks">Make a Course Management App using Angular and C#</div>
-    <button *ngIf = "userRole === 'student'"><a routerLink="/dashboard/welcome">Start</a></button>
+<div class="box" *ngFor = "let item of assignmentData">
+    <div class="quiz-name">{{item.title}}</div>
+    <div class="marks">{{item.content}}</div>
+    <!-- <button *ngIf = "userRole === 'student'"><a routerLink="/dashboard/welcome">Start</a></button> -->
 </div>
+

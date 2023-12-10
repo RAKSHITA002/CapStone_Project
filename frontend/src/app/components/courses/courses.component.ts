@@ -59,6 +59,10 @@ export class CoursesComponent {
     );
   }
 
- 
+  deleteCourse(id : string){
+    this.service.deleteCourse(id).subscribe((res)=>{
+      console.log(res);
+    })
+  }
 
 }

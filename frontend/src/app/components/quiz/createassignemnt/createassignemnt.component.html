@@ -1,0 +1,23 @@
+
+<div class="form-content">
+    <h2>Add New Assignment</h2>
+    <form [formGroup]="newCourse" (submit)="createAssignment()">
+        <div class="row">
+            <div class="col-lg-6">
+                <label>Title</label>
+                <input type="text" class="form-control" formControlName="title"
+                    [ngClass]="{'error': newCourse.get('title')?.dirty && !newCourse.get('title')?.valid}" />
+                <span style="color : red;"
+                    *ngIf="newCourse.get('title')?.dirty && !newCourse.get('title')?.valid">Please enter valid title
+                </span>
+            </div>
+            <div class="col-lg-6">
+                <label>Content</label>
+                <textarea formControlName="content"></textarea>
+            </div>
+            <div class="col-lg-12">
+                <input type="submit" [disabled]="!newCourse.valid" class="btn btn-primary mt-2">
+            </div>
+        </div>
+    </form>
+</div>

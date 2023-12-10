@@ -16,7 +16,7 @@
       <h3>{{course.title}}</h3>
       <h6 class="card-title">{{course.instructorName}}</h6>
       <p class="card-text" style="margin-top: 3vw;">{{course.heading}}</p>
-      <button *ngIf = "userRole === 'admin'">Delete</button>
+      <button *ngIf = "userRole === 'admin'" (click)="deleteCourse(course.id)">Delete</button>
     </div>
   </div>
 </div>

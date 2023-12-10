@@ -12,18 +12,19 @@ button {
 
   .box {
     background-color: #ffffff;
-    padding: 10px;
-    border-radius: 5px;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    padding-top: 14px;
+    padding-bottom: 14px;
+    padding-left : 4vw;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: left;
     justify-content: center;
-    margin : 7vw;
+    margin : 3vw;
+    border : 0.1px solid rgb(214, 213, 213);
   }
   
   .quiz-name {
-    font-size: 3vw;
+    font-size: 2vw;
     color: rgb(0, 0, 0);
     margin-bottom: 10px;
   }

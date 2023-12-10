@@ -41,6 +41,9 @@ import { QuizlistComponent } from './components/quiz/quizlist/quizlist.component
 import { ChatComponent } from './components/chat/chat.component';
 import { ReportsComponent } from './components/reports/reports.component';
 import { SupportStaffComponent } from './components/support-staff/support-staff.component';
+import { CreateassignemntComponent } from './components/quiz/createassignemnt/createassignemnt.component';
+import { ToastrModule } from 'ngx-toastr';
+import { InstructorChatComponent } from './components/instructor-chat/instructor-chat.component';
 
 @NgModule({
   declarations: [
@@ -75,6 +78,8 @@ import { SupportStaffComponent } from './components/support-staff/support-staff.
     ChatComponent,
     ReportsComponent,
     SupportStaffComponent,
+    CreateassignemntComponent,
+    InstructorChatComponent,
 
     
   ],
@@ -88,7 +93,8 @@ import { SupportStaffComponent } from './components/support-staff/support-staff.
     CardModule,
     ButtonModule,
     ReactiveFormsModule,
-    FormsModule 
+    FormsModule ,
+    ToastrModule.forRoot({})
   ],
   exports:[
     BrowserModule,

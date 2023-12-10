@@ -20,7 +20,7 @@
             </div>
             <div class="col-lg-12">
                     <label>Password</label>
-                    <input type="text" class="form-control" formControlName="password"
+                    <input type="password" class="form-control" formControlName="password"
                         [ngStyle]="{border : userData.get('password')?.dirty && !userData.get('password')?.valid? '1px solid red' : ''}" />
                     <span style="color : red;"
                         *ngIf="userData.get('password')?.dirty && !userData.get('password')?.valid">Please enter
@@ -30,10 +30,10 @@
             </div>
 
             <div class="col-lg-12">
-                <label>Role</label> <br>
+                <label>Role</label>
                 <input type="radio" formControlName="role" value="student"> Student <br>
                 <input type="radio" formControlName="role" value="instructor"> Instructor <br>
-                <input type="radio" formControlName="role" value="admin"> Admin <br>
+              <!--   <input type="radio" formControlName="role" value="admin"> Admin <br> -->
             </div>
 
 
